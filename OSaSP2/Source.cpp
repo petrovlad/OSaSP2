@@ -2,7 +2,7 @@
 #include <fstream>
 #include <string>
 
-#define INPUT_FILE "C:\\Users\\vladi\\Desktop\\TestFiles\\input.txt"
+#define INPUT_FILE "input.txt"
 #define DEFAULT_N 5
 #define DEFAULT_M 7
 
@@ -94,7 +94,7 @@ LRESULT CALLBACK OnGetMinMaxInfo(HWND hWnd, WPARAM wParam, LPARAM lParam) {
     AdjustWindowRect(&rect, WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME | WS_MINIMIZEBOX | WS_MAXIMIZEBOX, FALSE);
     
     minMaxInfo->ptMinTrackSize.x = rect.right;
-    minMaxInfo->ptMinTrackSize.y = rect.bottom - rect.top; //????? wtf
+    minMaxInfo->ptMinTrackSize.y = rect.bottom - rect.top; //?????
 
     return EXIT_SUCCESS;
 }
@@ -162,10 +162,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
     case WM_DESTROY:
         PostQuitMessage(EXIT_SUCCESS);//!!!
         break;
-
-  /*  case WM_LBUTTONDOWN: why it doesnt work without WM_PAINT switch??? is it matter what event generate an msg?
-        OnPaint(hWnd);
-        break;*/
 
     case WM_PAINT:
         OnPaint(hWnd); 
